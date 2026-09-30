@@ -4,6 +4,8 @@ const SQUARE_SCENE = preload("res://square.tscn")
 
 var last_pos = Vector2i(-1, -1)
 
+var list = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(8):
@@ -47,13 +49,23 @@ func _ready() -> void:
 			if instance.getPos() == Vector2i(7, 7):
 				instance.setPiece("B", "R")
 			
+			list[instance.getPos()] = instance
+			
 			add_child(instance)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func get_input(pos):
 	print(pos)
-	if last_pos != last_pos:
+	if last_pos == Vector2i(-1, -1):
 		last_pos = pos
+		list[last_pos].selected(true)
 	else:
-		pass
+		if last_pos != pos:
+			list[last_pos].selected(false)
+			last_pos = pos
+			list[last_pos].selected(true)
+		else:
+			list[last_pos].selected(false)
+			last_pos = Vector2i(-1, -1)

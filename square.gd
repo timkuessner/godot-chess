@@ -17,6 +17,12 @@ const DICT = {
 	7:"h",
 }
 
+func selected(v: bool):
+	if v:
+		$MarginContainer.show()
+	else:
+		$MarginContainer.hide()
+
 func getPos() -> Vector2i:
 	return pos
 
