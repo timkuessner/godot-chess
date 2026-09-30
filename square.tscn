@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qpaajhx7o8jb"]
 
 [ext_resource type="Script" uid="uid://bdji1pca84loj" path="res://square.gd" id="1_2eeqm"]
+[ext_resource type="StyleBox" uid="uid://c22na3v6x7yjv" path="res://styles/white.tres" id="1_5epwn"]
 
 [node name="Panel" type="Panel" unique_id=1077774956]
 anchors_preset = 15
@@ -10,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_5epwn")
 script = ExtResource("1_2eeqm")
 
 [node name="Label" type="Label" parent="." unique_id=746243537]
@@ -19,4 +21,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
 text = "test"
