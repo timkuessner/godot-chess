@@ -31,3 +31,8 @@ func setPos(_pos: Vector2i):
 	$Label.text = DICT[_pos.x] + str(_pos.y+1)
 	if (_pos.x + _pos.y) % 2 == 0:
 		add_theme_stylebox_override("panel", black_style)
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			get_parent().get_input(pos)
