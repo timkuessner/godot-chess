@@ -178,7 +178,7 @@ script = ExtResource("1_2eeqm")
 position = Vector2(53, 55.000004)
 scale = Vector2(1.3166666, 1.3666667)
 sprite_frames = SubResource("SpriteFrames_kej8o")
-animation = &"B_N"
+animation = &"0"
 offset = Vector2(-10, -10)
 
 [node name="Label" type="Label" parent="." unique_id=746243537]

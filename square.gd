@@ -4,6 +4,8 @@ const black_style = preload("res://styles/black.tres")
 
 var pos: Vector2i
 
+enum pieces { JUMP, WALK, RUN, IDLE, HURT, DEATH}
+
 const DICT = {
 	0:"a",
 	1:"b",
@@ -14,6 +16,15 @@ const DICT = {
 	6:"g",
 	7:"h",
 }
+
+func getPos() -> Vector2i:
+	return pos
+
+func setPiece(c: String, p: String):
+	$AnimatedSprite2D.play(c + "_" + p)
+
+func set0():
+	$AnimatedSprite2D.play("0")
 
 func setPos(_pos: Vector2i):
 	pos = _pos
