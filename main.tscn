@@ -4,12 +4,39 @@
 
 [node name="Main" type="Node2D" unique_id=369933102]
 
+[node name="figure" type="Container" parent="." unique_id=1594750680]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="King" type="Node2D" parent="figure" unique_id=1093318920]
+position = Vector2(0, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="figure/King" unique_id=1948965877]
+
+[node name="Läufer" type="Node2D" parent="figure" unique_id=291399492]
+
+[node name="Sprite2D" type="Sprite2D" parent="figure/Läufer" unique_id=1579001147]
+
+[node name="Bauer" type="Node2D" parent="figure" unique_id=794962011]
+
+[node name="Sprite2D" type="Sprite2D" parent="figure/Bauer" unique_id=910472099]
+
+[node name="Springer" type="Node2D" parent="figure" unique_id=1006406186]
+
+[node name="Sprite2D" type="Sprite2D" parent="figure/Springer" unique_id=1497538696]
+
+[node name="Dame" type="Node2D" parent="figure" unique_id=241335644]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=54495792]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer" unique_id=1643342312]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3

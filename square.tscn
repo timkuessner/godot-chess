@@ -2,6 +2,166 @@
 
 [ext_resource type="Script" uid="uid://bdji1pca84loj" path="res://square.gd" id="1_2eeqm"]
 [ext_resource type="StyleBox" uid="uid://c22na3v6x7yjv" path="res://styles/white.tres" id="1_5epwn"]
+[ext_resource type="Texture2D" uid="uid://bo8uioxmwinn8" path="res://assets/ChessPiecesArray-1.png" id="3_xncbd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xncbd"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(63, 25, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp4b8"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(240, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n04cd"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw7wg"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(180, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy4y0"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(300, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgxkx"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_864pj"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(120, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avmkh"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(240, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivfkl"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(60, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjpw6"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(180, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjaug"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(300, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cphe"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(0, 60, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plycj"]
+atlas = ExtResource("3_xncbd")
+region = Rect2(120, 60, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kej8o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xncbd")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp4b8")
+}],
+"loop": 1,
+"name": &"B_B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n04cd")
+}],
+"loop": 1,
+"name": &"B_K",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw7wg")
+}],
+"loop": 1,
+"name": &"B_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy4y0")
+}],
+"loop": 1,
+"name": &"B_P",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgxkx")
+}],
+"loop": 1,
+"name": &"B_Q",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_864pj")
+}],
+"loop": 1,
+"name": &"B_R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avmkh")
+}],
+"loop": 1,
+"name": &"W_B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivfkl")
+}],
+"loop": 1,
+"name": &"W_K",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjpw6")
+}],
+"loop": 1,
+"name": &"W_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjaug")
+}],
+"loop": 1,
+"name": &"W_P",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cphe")
+}],
+"loop": 1,
+"name": &"W_Q",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plycj")
+}],
+"loop": 1,
+"name": &"W_R",
+"speed": 5.0
+}]
 
 [node name="Panel" type="Panel" unique_id=1077774956]
 anchors_preset = 15
@@ -13,6 +173,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_5epwn")
 script = ExtResource("1_2eeqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=560406197]
+position = Vector2(53, 55.000004)
+scale = Vector2(1.3166666, 1.3666667)
+sprite_frames = SubResource("SpriteFrames_kej8o")
+animation = &"B_N"
+offset = Vector2(-10, -10)
 
 [node name="Label" type="Label" parent="." unique_id=746243537]
 layout_mode = 1
