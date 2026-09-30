@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dkmr3x67qyhew"]
+
+[ext_resource type="Script" uid="uid://diohu6a2bxcot" path="res://grid_container.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=369933102]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=54495792]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer" unique_id=1643342312]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/AspectRatioContainer" unique_id=867509019]
+layout_mode = 2
+columns = 8
+script = ExtResource("1_ig7tw")
