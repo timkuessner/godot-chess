@@ -7,7 +7,7 @@ func _ready() -> void:
 	for i in range(8):
 		for j in range(8):
 			var instance = SQUARE_SCENE.instantiate()
-			instance.setLabel(str(i) + ", " + str(j))
+			instance.setPos(Vector2i(j, 7-i))
 			add_child(instance)
 
 
