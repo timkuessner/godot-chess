@@ -4,6 +4,8 @@ const black_style = preload("res://styles/black.tres")
 
 var pos: Vector2i
 
+var c_p = "0"
+
 enum pieces { JUMP, WALK, RUN, IDLE, HURT, DEATH}
 
 const DICT = {
@@ -17,6 +19,10 @@ const DICT = {
 	7:"h",
 }
 
+func is0():
+	print(c_p)
+	return c_p == "0"
+
 func selected(v: bool):
 	if v:
 		$MarginContainer.show()
@@ -27,9 +33,15 @@ func getPos() -> Vector2i:
 	return pos
 
 func setPiece(c: String, p: String):
+	c_p = c + "_" + p
+	
 	$AnimatedSprite2D.play(c + "_" + p)
+	
+func getPiece():
+	return c_p
 
 func set0():
+	c_p = "0"
 	$AnimatedSprite2D.play("0")
 
 func setPos(_pos: Vector2i):

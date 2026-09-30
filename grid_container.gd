@@ -64,6 +64,13 @@ func get_input(pos):
 	else:
 		if last_pos != pos:
 			list[last_pos].selected(false)
+			if !list[last_pos].is0():
+				var p = list[last_pos].getPiece()
+				
+				list[pos].setPiece(p.split("_")[0], p.split("_")[1])
+				list[last_pos].set0()
+				
+				
 			last_pos = pos
 			list[last_pos].selected(true)
 		else:
