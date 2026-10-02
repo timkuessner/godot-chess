@@ -5,7 +5,7 @@ const SQUARE_SCENE = preload("res://square.tscn")
 var last_pos = Vector2i(-1, -1)
 
 var list = {}
-
+var w_turn = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(8):
@@ -57,22 +57,27 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func get_input(pos):
-	print(pos)
 	if last_pos == Vector2i(-1, -1):
 		last_pos = pos
 		list[last_pos].selected(true)
 	else:
 		if last_pos != pos:
 			list[last_pos].selected(false)
-			if !list[last_pos].is0():
+			if !list[last_pos].is0() and ((list[last_pos].getPiece().split("_")[0] == "W") == w_turn):
+				if w_turn:
+					w_turn = false
+					print("B trun")
+				else:
+					w_turn = true
+					print("W turn")
+
+					
 				var p = list[last_pos].getPiece()
-				
 				list[pos].setPiece(p.split("_")[0], p.split("_")[1])
 				list[last_pos].set0()
 				
-				
+			list[pos].selected(true)
 			last_pos = pos
-			list[last_pos].selected(true)
 		else:
 			list[last_pos].selected(false)
 			last_pos = Vector2i(-1, -1)
